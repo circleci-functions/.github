@@ -1,0 +1,56 @@
+name: "🐞 Bug report"
+description: Report a function that fails or does the wrong thing.
+labels: ["bug"]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: The version in your `functions:` block.
+      placeholder: v0.6.0
+    validations:
+      required: true
+  - type: textarea
+    id: config
+    attributes:
+      label: Config
+      description: The `functions:` entry and the step that fails. Leave out any secrets.
+      render: yaml
+      placeholder: |
+        functions:
+          setup-go: github.com/circleci-functions/setup-go@v0.6.0
+        jobs:
+          test:
+            steps:
+              - setup-go:
+                  with:
+                    version: "1.22"
+    validations:
+      required: true
+  - type: input
+    id: executor
+    attributes:
+      label: Executor
+      description: The executor type and image.
+      placeholder: "docker, cimg/base:current"
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened
+      description: The step's output, and a link to the job if the project is public.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: input
+    id: last-working
+    attributes:
+      label: Last version that worked
+      description: Leave empty if it never worked or you haven't checked.

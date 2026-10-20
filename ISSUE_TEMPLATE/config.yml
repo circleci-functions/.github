@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security issue
+    url: https://circleci.com/security/
+    about: Please don't open a public issue for a security problem.
+  - name: Get help with CircleCI
+    url: https://support.circleci.com/
+    about: For questions about CircleCI itself rather than a function.
